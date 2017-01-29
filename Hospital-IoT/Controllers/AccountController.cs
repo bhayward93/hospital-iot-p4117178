@@ -14,6 +14,7 @@ namespace Hospital_IoT.Controllers
 {
     [Authorize]
     public class AccountController : Controller
+        //
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
