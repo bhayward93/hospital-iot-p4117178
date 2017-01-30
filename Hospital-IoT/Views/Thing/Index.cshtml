@@ -1,4 +1,4 @@
-﻿@model IEnumerable<IoTModel.Thing>
+﻿@model IEnumerable<IoTModel.Sensor_Data>
 
 @{
     ViewBag.Title = "Index";
@@ -13,7 +13,13 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.thing_name)
+            @Html.DisplayNameFor(model => model.sensor_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.thing_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dateandtime)
         </th>
         <th></th>
     </tr>
@@ -21,12 +27,18 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.thing_name)
+            @Html.DisplayFor(modelItem => item.sensor_id)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.thing_id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.thing_id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.thing_id })
+            @Html.DisplayFor(modelItem => item.thing_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dateandtime)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.sensor_data_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.sensor_data_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.sensor_data_id })
         </td>
     </tr>
 }
